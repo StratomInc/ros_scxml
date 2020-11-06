@@ -15,15 +15,15 @@ The QScxml library is only available from version Qt 5.7 and higher. This implem
 - [This PPA](https://launchpad.net/~beineri) provides binary distributions of various versions of Qt for various operating systems
     - On the PPA site, select the QT (5.12 or above) version for your system
         - Qt 5.13.x is recommended for Ubuntu 18.04
-- Add the PPA
+- Add the PPA (Ubuntu 20)
     ```bash
-    sudo add-apt-repository ppa:beineri/opt-qt-5.13.2-bionic
+    sudo add-apt-repository ppa:beineri/opt-qt-5.14.2-focal
     sudo apt-get update
     ```
     > Note: Edit command above to match the version of qt that you'd like to install
 - Install the full Qt library 
     ```
-    sudo apt install qt513-meta-full
+    sudo apt install qt514-meta-full
     ```
     > Note: Edit command above to match the version of qt that you'd like to install
 
@@ -34,16 +34,8 @@ The QScxml library is only available from version Qt 5.7 and higher. This implem
 In order to make this library accessible to cmake the `CMAKE_MODULE_PATH` and `LD_LIBRARY_PATH` environment variables must be set.  Locate your Qt installation directory (usually in the */opt* directory) and set the environment variables as follows:
 
 ```bash
+source /opt/ros/qt514/bin/qt514-env.sh
 export CMAKE_PREFIX_PATH=<path>/<to>/<qt>/lib/cmake:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=<path>/<to>/<qt>/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=<path>/<to>/<qt>/plugins:$LD_LIBRARY_PATH  
-```
-
-For the version installed above qt513 it would be as follows:
-```bash
-export CMAKE_PREFIX_PATH=/opt/qt513/lib/cmake:$CMAKE_PREFIX_PATH
-export LD_LIBRARY_PATH=/opt/qt513/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/opt/qt513/plugins:$LD_LIBRARY_PATH
 ```
 
 ---
@@ -236,7 +228,7 @@ export LD_LIBRARY_PATH=/opt/qt513/plugins:$LD_LIBRARY_PATH
 
 1. From the *rclcpp_scxml_demos* directory run the demo node as follows
     ```
-    ros2 run rclcpp_scxml_demos demo_scxml_state_machine __params:=resource/params.yaml
+    ros2 run rclcpp_scxml_demos demo_scxml_state_machine --ros-args --params-file resource/params.yaml
     ```
 2. From another terminal echo the current state
     ```
