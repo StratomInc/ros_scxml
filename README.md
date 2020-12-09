@@ -5,7 +5,9 @@
 [![license - bsd 2 clause](https://img.shields.io/:license-BSD%202--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 Lightweight finite state machine library that uses the [SCXML](https://commons.apache.org/proper/commons-scxml/guide/scxml-documents.html) standard
-
+---
+## Stratom Note:
+The ROS1 component has been stripped to allow ROS2 only installs to work correctly. To pull upstream changes the ROS1 versions should be stripped from the SWRI repo
 ---
 ## Prerequisites
 ### QT 5
