@@ -44,7 +44,7 @@
 #include <log4cxx/patternlayout.h>
 #include <log4cxx/consoleappender.h>
 
-static const int WAIT_TRANSITION_PERIOD = 200;  // ms
+static const int WAIT_TRANSITION_PERIOD = 6000;  // ms
 static const int WAIT_QT_EVENTS = 20;           // ms
 
 log4cxx::LoggerPtr createConsoleLogger(const std::string& logger_name)
